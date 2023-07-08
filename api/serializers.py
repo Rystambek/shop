@@ -17,20 +17,20 @@ class UserSerializer(serializers.ModelSerializer):
         model = User
         fields =['id','username','password']
 class OrderSerializer(serializers.ModelSerializer):
-    product = ProductSerializer(read_only=True)
-    user = UserSerializer(read_only=True)
+    # product = ProductSerializer(read_only=True)
+    # user = UserSerializer(read_only=True)
     class Meta:
         model=Order
-        fields =['id','user','product']
+        fields = "__all__" #['id','user','product']
 class CommentSerializer(serializers.ModelSerializer):
-    product = ProductSerializer(read_only=True)
-    user = UserSerializer(read_only=True)
+    # product = ProductSerializer(read_only=True)
+    # user = UserSerializer(read_only=True)
     class Meta:
         model=Comment
-        fields =['id','text','user','product']
+        fields = "__all__" #['id','text','user','product']
 class LikeSerializer(serializers.ModelSerializer):
-    product = ProductSerializer( read_only=True)
-    user = UserSerializer(read_only=True)
+    # product = ProductSerializer( read_only=True)
+    # user = UserSerializer(read_only=True)
     class Meta:
         model=Like
-        fields =['id','like','user','product']
+        fields = "__all__" #['id','like','user','product']

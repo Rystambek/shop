@@ -26,16 +26,16 @@ class Order(models.Model):
     
 class Comment(models.Model):
     text = models.TextField()
-    users = models.ForeignKey(User, on_delete=models.CASCADE)
-    products = models.ForeignKey(Product, on_delete=models.CASCADE) 
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE) 
 
     def __str__(self) -> str:
         return f"{self.text}..."
     
 class Like(models.Model):
     like = models.BooleanField(default=False, blank=True)
-    users = models.ForeignKey(User, on_delete=models.CASCADE)
-    products = models.ForeignKey(Product, on_delete=models.CASCADE) 
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE) 
 
     def __str__(self) -> str:
         return f"{self.id}"
